@@ -1,34 +1,34 @@
 #include <bits/stdc++.h>
 using namespace std;
-void bubbleSort(vector<int>& arr) {
-    int n = arr.size();
-    bool swapped;
-  
-    for (int i = 0; i < n - 1; i++) {  //Time Complexity N*N
-        swapped = false;
-        for (int j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                swap(arr[j], arr[j + 1]);
-                swapped = true;
+void bubblesort(vector<int> &ar)
+{ 
+    int n = ar.size();
+    bool ans = false;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n - i - 1; j++)   // Time Complexity N*N
+        {
+            if (ar[j] > ar[j + 1])
+            {
+                swap(ar[j], ar[j + 1]);
+                ans = true;
             }
         }
-      
-        // If no two elements were swapped, then break
-        if (!swapped)
+        if (ans == false)
+        {
             break;
+        }
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << ar[i] << " ";
     }
 }
+int main()
+{
+    vector<int> ar = {10, 5, 15, 14, 9, 2, 31, 13, 6, 11, 8, 7};
 
-// Function to print a vector
-void printVector(const vector<int>& arr) {
-    for (int num : arr)
-        cout << " " << num;
-}
-
-int main() {
-    vector<int> arr = { 64, 34, 25, 12, 22, 11, 90 };
-    bubbleSort(arr);
-    cout << "Sorted array: \n";
-    printVector(arr);
+    bubblesort(ar);
     return 0;
 }
