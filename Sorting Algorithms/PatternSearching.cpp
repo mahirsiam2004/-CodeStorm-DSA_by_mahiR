@@ -15,19 +15,14 @@ void search(char* pat, char* txt)
             if (txt[i + j] != pat[j])
                 break;
 
-        if (j
-            == M) // if pat[0...M-1] = txt[i, i+1, ...i+M-1]
-            cout << "Pattern found at index " << i << endl;
+        if (j== M)  cout << "Pattern found at index " << i << endl;
     }
 }
 
-// Driver's Code
 int main()
 {
     char txt[] = "AABAACAADAABAAABAA";
     char pat[] = "AABA";
-
-    // Function call
     search(pat, txt);
     return 0;
 }
