@@ -1,5 +1,6 @@
-class Node
-{
+#include<bits/stdc++.h> 
+using namespace std;
+class Node{
 public:
     int val;
     Node *next;
@@ -59,7 +60,7 @@ int main()
     cin >> pos;                    // ডিলিট করার পজিশন ইনপুট নিচ্ছি। 
     if (pos >= size(head))         // পজিশন যদি সাইজের সমান অথবা বেশি হয় তাহলে ইনভেলিড হবে। এক্ষেত্রে সাইজের সমান হলেও ইনভেলিড হবে কারন কোন লিঙ্কড লিস্ট এর সাইজ যদি ৫ হয় তাহলে তার নোড পজিশন থাকবে ০ থেকে ৪ পর্যন্ত। ৫ পজিশনে যেহেতু কোন নোড নেই তাই সেটি ডিলিটও করা যাবে না।
     {
-        cout << "Invalid" << endl;
+        cout << "Invalid" <<endl;
     }
     else
     {
