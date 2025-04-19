@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-class Node // একটা node class create করবো।
+#define ll long long
+class Node
 {
 public:
     int val;
@@ -12,21 +12,42 @@ public:
         this->next = NULL;
     }
 };
-
-
-void insert_at_position(Node *&head, int index, int value)
-{
-
-    Node *newNode = new Node(value); // নতুন Node বানিয়ে নিলাম 
-
-    Node *temp = head; // temp পয়েন্টার এ head রেখে দিলাম 
-
-    for (int i = 1; i <= index - 1; i++)
-    {
-        temp = temp->next;
+void insertAtTail(Node *&head,int val){
+    Node *newNode=new Node(val);
+    Node *temp=head;
+    if(head==nullptr){
+        head=newNode;
+        return;
     }
-    // এখানে temp এ যে index এ Node insert করতে হবে তার previous Node আছে
-    // temp->next এ আছে তার পরের Node 
-    newNode->next = temp->next; // New_node এর next পয়েন্টার এ  next_node কে রেখে দিলাম
-    temp->next = newNode; //Previous_Node এর next পয়েন্টার এ  new_node এর এড্রেস রেখে দিলাম
+    while(temp->next!=nullptr){
+        temp=temp->next;
+    }
+    temp->next=newNode;
+
+}
+
+void insertAnyPosition(Node *head,int index,int val){
+    Node *newNode=new Node(val);
+    Node *temp=head;
+    for(int i=1;i<=index-1;i++){
+        temp=temp->next;
+    }
+    newNode->next=temp->next;
+    temp->next=newNode;
+}
+void print(Node *head){
+    Node *temp=head;
+    while(temp!=nullptr){
+        cout<<temp->val<<" ";
+        temp=temp->next;
+    }
+}
+int main()
+{
+    Node *head = nullptr;
+    insertAtTail(head, 10);
+    insertAtTail(head, 20);
+    insertAnyPosition(head,2,30);
+    print(head);
+    return 0;
 }
