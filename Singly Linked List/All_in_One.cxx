@@ -49,6 +49,18 @@ void insertAtHead(Node *&head, int val)
     head = newNode;
 }
 
+void deleteAnyPosition(Node *&head, int index)
+{
+    Node *temp = head;
+    for (int i = 1; i <= index - 1; i++)
+    {
+        temp = temp->next;
+    }
+    Node *deleteNode = temp->next;
+    temp->next = temp->next->next;
+    delete deleteNode;
+}
+
 void print(Node *head)
 {
     Node *temp = head;
@@ -68,6 +80,7 @@ int main()
     insertAtTail(head, 50);
     InsertAnyPositiin(head, 2, 200);
     insertAtHead(head, 0);
+    deleteAnyPosition(head, 4);
     print(head); // complixity of o(N)
     return 0;
 }
