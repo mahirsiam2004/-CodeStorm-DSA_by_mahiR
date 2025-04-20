@@ -30,6 +30,16 @@ void insertAtTail(Node *&head, int val)
     temp->next = newNode;
 }
 
+int size(Node *head){
+    int count=0;
+    Node *temp=head;
+    while(temp!=nullptr){
+        count++;
+        temp=temp->next;
+    }
+    return count;
+}
+
 void InsertAnyPositiin(Node *head, int index, int val)
 {
     Node *newNode = new Node(val);
