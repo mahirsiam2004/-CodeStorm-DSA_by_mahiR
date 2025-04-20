@@ -1,4 +1,5 @@
 // Sigly Linked List oparations with  optimization by MahiR
+// this code is incompleate
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
@@ -30,12 +31,14 @@ void insertAtTail(Node *&head, int val)
     temp->next = newNode;
 }
 
-int size(Node *head){
-    int count=0;
-    Node *temp=head;
-    while(temp!=nullptr){
+int size(Node *head)
+{
+    int count = 0;
+    Node *temp = head;
+    while (temp != nullptr)
+    {
         count++;
-        temp=temp->next;
+        temp = temp->next;
     }
     return count;
 }
@@ -83,47 +86,50 @@ void print(Node *head)
 int main()
 {
     Node *head = nullptr;
-    // int n;
-    // cin >> n;
-    // cout << "1 FOR INPUT" << endl;
-    // cout << "2 FOR Insert At Any Position" << endl;
-    // cout << "3 FOR Insert At Head" << endl;
-    // cout << "4 FOR Delete At Any Position" << endl;
-    // cout << "Exit" << endl;
+    while (true)
+    {
 
-    // switch (n)
-    // {
-    // case 1:
-    //     while (true)
-    //     {
-    //         int value;
-    //         cin >> value;
-    //         insertAtTail(head, 20);
-    //         if (value == -1)
-    //             break;
-    //     }
-    //     break;
-    // case 2:
-    //     int n, val;
-    //     cout << "Which index you want to insert -> ";
-    //     cin >> n;
-    //     cout << "Which value you want to insert -> ";
-    //     cin >> val;
-    //     InsertAnyPositiin(head, n, val);
-    // default:
-    //     cout << "none";
-    //     break;
-    // }
+        cout << "1 FOR INPUT" << endl;
+        cout << "2 FOR Insert At Any Position" << endl;
+        cout << "3 FOR Insert At Head" << endl;
+        cout << "4 FOR Delete At Any Position" << endl;
+        cout << "Exit" << endl;
+        int n;
+        cin >> n;
+        // switch (n)
+        // {
+        // case 1:
+        //     while (true)
+        //     {
+        //         int value;
+        //         cin >> value;
+        //         insertAtTail(head, 20);
+        //         if (value == -1)
+        //             break;
+        //     }
+        //     break;
+        // case 2:
+        //     int n, val;
+        //     cout << "Which index you want to insert -> ";
+        //     cin >> n;
+        //     cout << "Which value you want to insert -> ";
+        //     cin >> val;
+        //     InsertAnyPositiin(head, n, val);
+        // default:
+        //     cout << "none";
+        //     break;
+        // }
+    }
 
-    insertAtTail(head, 10);
-    insertAtTail(head, 20);
-    insertAtTail(head, 30);
-    insertAtTail(head, 40);
-    insertAtTail(head, 50);
-    InsertAnyPositiin(head, 2, 200);
-    insertAtHead(head, 0);
-    deleteAnyPosition(head, 4);
-    print(head); // complixity of o(N)
+    // insertAtTail(head, 10);
+    // insertAtTail(head, 20);
+    // insertAtTail(head, 30);
+    // insertAtTail(head, 40);
+    // insertAtTail(head, 50);
+    // InsertAnyPositiin(head, 2, 200);
+    // insertAtHead(head, 0);
+    // deleteAnyPosition(head, 4);
+    // print(head); // complixity of o(N)
     return 0;
 }
 //  /\_/\  
