@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 #define ll long long
 class Node
@@ -14,27 +14,20 @@ public:
         this->right = NULL;
     }
 };
-void levelOrder(Node *root)
-{
-    queue<Node *> q;
+void levelOrder(Node *root){
+    queue<Node *>q;
     q.push(root);
-    while (!q.empty())
-    {
-        Node *f = q.front();
+    while(!q.empty()){
+        Node *f=q.front();
         q.pop();
 
-        // now its time to work for my need
-        cout << f->val << " ";
+        cout<<f->val<<" ";
 
-        // now its time to keep children
-        if (f->left)
-            q.push(f->left);
-        if (f->right)
-            q.push(f->right);
+        if(f->left) q.push(f->left);
+        if(f->right)q.push(f->right);
     }
 }
-int main()
-{
+int main(){
     Node *root = new Node(10);
     Node *a = new Node(20);
     Node *b = new Node(30);
