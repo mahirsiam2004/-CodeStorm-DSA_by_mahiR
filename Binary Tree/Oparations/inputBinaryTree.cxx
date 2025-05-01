@@ -56,6 +56,6 @@ Node *inputBinaryTree()
 
 int main()
 {
-    inputBinaryTree();
+    Node *root=inputBinaryTree();
     return 0;
 }
